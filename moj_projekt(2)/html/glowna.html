@@ -1,0 +1,109 @@
+	<!DOCTYPE html>
+	<html lang="pl">
+	<body onload="startclock()">
+	<header>
+        <h1>Filmy Oscarowe</h1>
+    </header>
+	<table style="width: 100%">
+        <tr>
+            <th><a href="index.php"> Strona główna </a></th>
+            <th><a href="index.php?idp=podstrona1"> Rekordziści </a></th>
+            <th><a href="index.php?idp=podstrona2"> Zeszłe Gale </a></th>
+			<th><a href="index.php?idp=podstrona3"> Gala 2024 </a></th>
+			<th><a href="index.php?idp=podstrona4"> Kontakt </a></th>
+			<th><a href="index.php?idp=podstrona5"> Filmy </a></th>
+        </tr>
+    </table>
+	
+	<div id="zegarek"></div>
+	<div id="data"></div>
+    <section id="wstęp">
+        <h2>Gala Oscarów</h2>
+		<b> Rozdanie Oscarów to najbardziej prestiżowa ceremonia wręczenia nagród w Hollywood, organizowana corocznie. Przybrała postać megawydarzenia i wszyscy związani bezpośrednio lub pośrednio z Hollywood z niecierpliwością czekają na oscarową noc, a popularność Oscarów rosła z biegiem czasu.</b>
+		<br>
+		<img src="img/gala.jpeg" alt="Gala oscarów" height= "400" width= "600" />
+		<figcaption>  Gala oscarów 2019</figcaption> 
+    </section>
+    <section id="statuetka">
+        <h2>Oscar</h2>
+        <b> Zwyciezcy w każdej kategorii otrzymują statuetkę, tzw. "Oscara". Oscar ma trochę ponad 34 cm wysokości i waży ponad 4 kilogramy. Jest wykonany z brązu i pokryty 24-karatowym złotem. Rolka filmu umieszczona pod złotym krzyżowcem ma pięć „szczebli” , co odnosi się do pięciu oryginalnych kategorii, w których przyznawana była nagroda.</b>
+		<br>
+		<img src="img/oscar.jpg" alt="Statuetka Oscara" height= "275" width= "500" />
+		<figcaption> Statuetki w Muzeum Kinematografii w Łodzi</figcaption> 
+    </section>
+	
+	<section id="guzik1">
+	
+	<div id="animacjaTestowa1" class="test-block"> Kliknij, a się powiększe</div>
+	
+		<script>
+		
+		$("#animacjaTestowa1").on("click", function(){
+			$(this).animate({
+				width: "500px",
+				opacity: 0.4,
+				fontSize: "3em",
+				borderwidht: "10px"
+			}, 1500);
+		});
+		
+		</script>
+		
+	</section>
+	
+	<section id="guzik2">
+		
+	<div id="animacjaTestowa2" class="test-block"> Najedź kursorem, a się powiększe</div>
+	
+		<script>
+		
+		$("#animacjaTestowa2").on({
+		"mouseover" : function(){
+			$(this).animate({
+				width: 300
+			}, 800);
+		},
+		"mouseout" : function(){
+			$(this).animate({
+				width: 200
+			}, 800);
+		}
+		});
+		
+		</script>
+		
+	</section>
+		
+	<section id="guzik3">
+		
+	<div id="animacjaTestowa3" class="test-block"> Klikaj, abym urósł</div>
+	
+		<script>
+		
+		$("#animacjaTestowa3").on("click", function(){
+			if (!$(this).is(":animated")){
+				$(this).animate({
+					width: "+=" + 50,
+					height: "+=" + 10,
+					opacity: "+=" + 0.1,
+					duration : 3000 
+				});
+			}
+		});
+		
+		</script>
+	
+	</section>
+	
+	<FORM method="POST" NAME="background">
+		<INPUT TYPE="button" VALUE="żółty" ONCLICK="changeBackground('#FFF000')">
+		<INPUT TYPE="button" VALUE="czarny" ONCLICK="changeBackground('#000000')">
+		<INPUT TYPE="button" VALUE="biały" ONCLICK="changeBackground('#FFFFFF')">
+		<INPUT TYPE="button" VALUE="zielony" ONCLICK="changeBackground('#00FF00')">
+		<INPUT TYPE="button" VALUE="niebieski" ONCLICK="changeBackground('#0000FF')">
+		<INPUT TYPE="button" VALUE="pomarańczowy" ONCLICK="changeBackground('#FF8000')">
+		<INPUT TYPE="button" VALUE="szary" ONCLICK="changeBackground('c0c0c0')">
+	<INPUT TYPE="button" VALUE="czerwony" ONCLICK="changeBackground('#FF0000')">
+	</FORM>
+	</body>
+	</html>	
